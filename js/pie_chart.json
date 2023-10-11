@@ -1,0 +1,24 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Distribution of Shark Attack Types",
+  "width": 300,
+  "height": 300,
+  "data": {
+    "url": "https://github.com/Xuanny-qx/FIT3179/blob/main/Visualisation2/data/global-shark-attack.csv"
+  },
+  "mark": "arc",
+  "encoding": {
+    "theta": {
+      "field": "Type",
+      "type": "nominal",
+      "stack": true,
+      "title": "Attack Type"
+    },
+    "color": {
+      "field": "Type",
+      "type": "nominal",
+      "scale": {"scheme": "category20c"},
+      "legend": {"title": "Legend"} 
+    }
+  }
+}
