@@ -4,21 +4,19 @@
   "width": "container",
   "height": 300,
   "data": {
-    "url": "https://github.com/Xuanny-qx/Visualisation2/blob/main/data/shark_attack.csv"
+    "url": "https://raw.githubusercontent.com/Xuanny-qx/Visualisation2/main/data/shark_attack.csv"
   },
+  "transform": [
+    {
+      "aggregate": [
+        {"op": "count", "as": "count"}
+      ],
+      "groupby": ["Type"]
+    }
+  ],
   "mark": "arc",
   "encoding": {
-    "theta": {
-      "field": "Type",
-      "type": "nominal",
-      "stack": true,
-      "title": "Attack Type"
-    },
-    "color": {
-      "field": "Type",
-      "type": "nominal",
-      "scale": {"scheme": "category20c"},
-      "legend": {"title": "Legend"} 
-    }
+    "theta": {"field": "count", "type": "quantitative", "title": "Attack Type"},
+    "color": {"field": "Type", "type": "nominal", "scale": {"scheme": "category20c"}, "legend": {"title": "Legend"}}
   }
 }
