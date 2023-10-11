@@ -1,0 +1,22 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Number of Shark Attack Incidents Over the Years",
+  "width": "container",
+  "height": 400,
+  "data": {
+    "url": "https://github.com/Xuanny-qx/FIT3179/blob/main/Visualisation2/data/global-shark-attack.csv" 
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "Date",
+      "type": "temporal",
+      "axis": {"title": "Year"} 
+    },
+    "y": {
+      "aggregate": "count",
+      "type": "quantitative",
+      "axis": {"title": "Number of Incidents"}
+    }
+  }
+}
