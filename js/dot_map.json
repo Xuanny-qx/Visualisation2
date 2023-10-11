@@ -23,7 +23,7 @@
     },
     {
       "data": {
-        "url": "https://github.com/Xuanny-qx/FIT3179/blob/main/Visualisation2/data/location_coordinates.csv"
+        "url": "https://raw.githubusercontent.com/Xuanny-qx/Visualisation2/main/data/location_coordinates.csv"
       },
       "projection": {
         "type": "mercator" 
