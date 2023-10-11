@@ -4,7 +4,7 @@
   "width": "container",
   "height": 400,
   "data": {
-    "url": "https://raw.githubusercontent.com/Xuanny-qx/Visualisation2/main/data/global-shark-attack.csv" 
+    "url": "https://raw.githubusercontent.com/Xuanny-qx/Visualisation2/main/data/shark_attack.csv" 
   },
   "mark": "line",
   "encoding": {
