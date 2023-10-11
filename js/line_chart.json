@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Number of Shark Attack Incidents Over the Years",
+  "title": "Shark Attack Incidents Over the Years",
   "width": "container",
   "height": 400,
   "data": {
