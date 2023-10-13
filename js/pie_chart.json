@@ -12,11 +12,19 @@
         {"op": "count", "as": "count"}
       ],
       "groupby": ["Type"]
+    },
+    {
+      "calculate": "datum.count / sum(datum.count)",
+      "as": "percentage"
     }
   ],
   "mark": "arc",
   "encoding": {
-    "theta": {"field": "count", "type": "quantitative", "title": "Attack Type"},
-    "color": {"field": "Type", "type": "nominal", "scale": {"scheme": "category20c"}, "legend": {"title": "Legend"}}
+    "theta": {"field": "percentage", "type": "quantitative", "title": "Attack Type"},
+    "color": {"field": "Type", "type": "nominal", "scale": {"scheme": "category20c"}, "legend": {"title": "Legend"},
+    "tooltip": [
+      {"field": "Type", "title": "Attack Type"},
+      {"field": "percentage", "title": "Percentage", "format": ".2%"} 
+    ]
   }
 }
