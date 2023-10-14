@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Distribution of Shark Attack Fatalities",
+    "width": "container",
+    "height": 300,
+    "data": {
+      "url": "https://raw.githubusercontent.com/Xuanny-qx/Visualisation2/main/data/shark_attack.csv"
+    },
+    "transform": [
+      {
+        "filter": "datum['Fatal (Y/N)'] == 'Y' || datum['Fatal (Y/N)'] == 'N'"
+      },
+      {
+        "aggregate": [
+          {"op": "count", "as": "count"}
+        ],
+        "groupby": ["Fatal (Y/N)"]
+      }
+    ],
+    "mark": "arc",
+    "encoding": {
+      "theta": {"field": "count", "type": "quantitative", "title": "Percentage"},
+      "color": {"field": "Fatal (Y/N)", "type": "nominal", "scale": {"scheme": "category10"}, "legend": {"title": "Fatal (Y/N)"},
+                "sort": ["Y", "N"]
+              },
+      "tooltip": [
+        {"field": "Fatal (Y/N)", "type": "nominal", "title": "Fatal (Y/N)"},
+        {"field": "count", "type": "quantitative", "title": "Count"}
+      ]
+    }
+  }
+  
