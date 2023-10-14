@@ -35,9 +35,6 @@
         <p> On average, there are only about 80 to 100 reported shark attacks worldwide each year, with a relatively low percentage being fatal. 
           The International Shark Attack File (ISAF) diligently tracks and compiles data on shark attacks to gain a better understanding of these incidents and 
           enhance safety measures.</p>
-        <p> Many shark attacks are believed to be cases of mistaken identity, where sharks confuse humans with their typical prey. Swimmers and surfers are most 
-          commonly involved in these incidents due to their presence in the water. To minimize the risk of shark encounters, experts recommend adhering to safety guidelines,
-          such as avoiding areas known for high shark activity, avoiding swimming alone, and staying informed about local shark advisories.</p>
         </div>
     </div>
     <!-- end pure grid group -->
@@ -82,21 +79,49 @@
     
     <!-- Pie chart -->
     <div class="pure-g">
-      <div class="pure-u-1-1">
-        <h2>Proportion|Global</h2>
+      <div class="pure-u-1-2">
+        <div class="description description-right">
+          <h2>Proportion|Attack Type</h2>
+          <p>The pie chart provides a visual breakdown of shark attacks by type, including categories like boating, provoked, 
+            sea disaster, and unprovoked. Additionally, it sheds light on cases labeled as 'questionable,' indicating 
+            scenarios where the reason for the shark attack remains a mystery.</p>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
         <div id="vis3" class="vis-container"></div>
       </div>
     </div>
     <!-- end pure grid group -->
 
-    <!-- Small multiples -->
+    <!-- Pie chart 2 -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div id="vis4" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="description description-right">
+          <h2>Proportion|Fatality</h2>
+          <p>The pie chart visually represents the distribution of shark attack incidents, distinguishing between those 
+            that resulted in a fatality (Y) and those that were non-fatal (N).
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+    
+    <!-- topk bar chart -->
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <!-- <p><small><i>Explore the distribution of shark attack types using a pie chart. The size of each arc reflects the
-              proportion of each attack type.</i></small></p> -->
+        <h2>Geography|Global</h2>
+        <div id="vis5" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
 
-        <p>
-          The pie chart provides a visual breakdown of shark attacks by type, including categories like boating, provoked, sea disaster, and unprovoked. Additionally, it sheds light on cases labeled as 'questionable,' indicating scenarios where the reason for the shark attack remains a mystery.</p>
+    <!-- Caption/small text -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <p>The topk bar chart show the top k countries for shark attack. </p>
       </div>
     </div>
     <!-- end pure grid group -->
@@ -113,6 +138,8 @@
     var specVis1 = "./js/dot_map.json";
     var specVis2 = "./js/line_chart.json";
     var specVis3 = "./js/pie_chart.json";
+    var specVis4 = "./js/pie_chart_fatal.json";
+    var specVis5 = "./js/topkbar.json";
 
     vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -125,6 +152,15 @@
     vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
+
+    vegaEmbed('#vis4', specVis1, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis5', specVis1, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
   </script>
 </body>
 
