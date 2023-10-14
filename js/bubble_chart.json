@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 400,
+  "title": "Top  Shark Attack Activities by Fatality",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Xuanny-qx/Visualisation2/main/data/shark_attack.csv",
+    "format": {"type": "csv"}
+  },
+  "mark": "circle",
+  "encoding": {
+    "x": {
+      "field": "Activity",
+      "type": "nominal",
+      "axis": {"title": "Activity"},
+      "sort": {"op": "count", "order": "descending"},
+      "scale": {"rangeStep": 20} 
+    },  
+    "y": {
+      "field": "count",
+      "type": "quantitative",
+      "axis": {"title": "Frequency"},
+      "scale": {"zero": true} 
+    },
+    "size": {
+      "field": "count",
+      "type": "quantitative",
+      "legend": {"title": "Frequency"}
+    },
+    "color": {
+      "field": "Fatal (Y/N)",
+      "type": "nominal",
+      "scale": {"range": ["red", "blue"]}, 
+      "legend": {"title": "Fatal"}
+    },
+    "tooltip": [
+      {"field": "Activity", "type": "nominal", "title": "Activity"},
+      {"field": "count", "type": "quantitative", "title": "Frequency"},
+      {"field": "Fatal (Y/N)", "type": "nominal", "title": "Fatal"}
+    ]
+  },
+  "transform": [
+    {
+      "filter": {"field": "Activity", "isValid": true}, 
+      "filter": {"field": "Fatal (Y/N)", "oneOf": ["Y", "N"]}
+    },
+    {
+      "aggregate": [{"op": "count", "as": "count"}],
+      "groupby": ["Activity", "Fatal (Y/N)"]
+    },
+    {
+      "window": [{"op": "rank", "as": "rank"}],
+      "sort": [{"field": "count", "order": "descending"}]
+    },
+    {
+      "filter": {"field": "rank", "lte": 11} 
+    }
+  ]
+}
