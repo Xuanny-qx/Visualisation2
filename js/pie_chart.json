@@ -20,17 +20,12 @@
   ],
   "mark": "arc",
   "encoding": {
-    "theta": {"field": "percentage", "type": "quantitative", "title": "Attack Type"},
-    "color": {
-      "field": "Type",
-      "type": "nominal",
-      "scale": {"range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"]},
-      "legend": {"title": "Legend"}
+    "theta": {"field": "percentage", "type": "quantitative", "title": "Percentage"},
+    "color": {"field": "Type", "type": "nominal", "scale": {"scheme": "dark2"}, "legend": {"title": "Attack Type"}
     },
     "tooltip": [
-      {"field": "Type", "title": "Attack Type"},
-      {"field": "count", "title": "Count"},
-      {"field": "percentage", "title": "Percentage", "format": ".1%"} 
+      { "field": "Type", "title": "Attack Type" },
+      { "field": "percentage", "title": "Percentage", "format": ".1%" }
     ]
   }
 }
