@@ -17,6 +17,6 @@
   "mark": "arc",
   "encoding": {
     "theta": {"field": "count", "type": "quantitative", "title": "Attack Type"},
-    "color": {"field": "Type", "type": "nominal", "scale": {"scheme": "dark2"}, "legend": {"title": "Legend"}}
+    "color": {"field": "Type", "type": "nominal", "scale": {"scheme": "category20c"}, "legend": {"title": "Legend"}}
   }
 }
