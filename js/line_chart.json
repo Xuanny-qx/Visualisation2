@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Shark Attack Incidents Over the Years",
+  "title": "Number of Shark Attack Incidents Over the Years",
   "width": "container",
   "height": 400,
   "data": {
@@ -17,6 +17,10 @@
       "aggregate": "count",
       "type": "quantitative",
       "axis": {"title": "Number of Incidents"}
-    }
+    },
+    "tooltip": [
+      {"field": "Year", "type": "temporal", "title": "Year"},
+      {"field": "Year", "aggregate": "count", "type": "quantitative", "title": "Number of Incidents"}
+    ]
   }
 }
