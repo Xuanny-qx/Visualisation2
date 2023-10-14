@@ -1,9 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container", 
-  "height": 500,
+  "width": "container",
+  "height": 700,
   "title": "Global shark attacks over the years",
-  
   "layer": [
     {
       "data": {
@@ -18,8 +17,8 @@
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#99d8c9",
-        "stroke": "white"
+        "fill": "lightgray", 
+        "stroke": "lightgray"
       }
     },
     {
@@ -27,14 +26,21 @@
         "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
         "format": {"type": "topojson", "feature": "oceans"}
       },
-      "mark": {"type": "geoshape", "fill": "skyblue"}
+      "mark": {"type": "geoshape", "fill": "skyblue"}  
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+      },
+      "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
     },
     {
       "data": {
         "url": "https://raw.githubusercontent.com/Xuanny-qx/FIT3179/main/Visualisation2/data/location_coordinates.csv"
       },
       "projection": {
-        "type": "mercator" 
+        "type": "mercator"
       },
       "mark": "circle",
       "encoding": {
@@ -46,8 +52,12 @@
           "field": "lat",
           "type": "quantitative"
         },
-        "size": {"value": 10}, 
-        "color": {"value": "red"} 
+        "size": {"value": 30},  
+        "color": {"value": "red"},
+        "tooltip": [
+          {"field": "original_Location", "type": "nominal", "title": "Location"},
+          {"field": "country", "type": "nominal", "title": "Country"}
+        ]
       }
     }
   ]
