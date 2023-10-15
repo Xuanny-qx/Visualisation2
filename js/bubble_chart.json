@@ -30,7 +30,7 @@
     "color": {
       "field": "Fatal (Y/N)",
       "type": "nominal",
-      "scale": {"range": ["red", "blue"]}, 
+      "scale": {"range": ["blue", "red"]}, 
       "legend": {"title": "Fatal"}
     },
     "tooltip": [
