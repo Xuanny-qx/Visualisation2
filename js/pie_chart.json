@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Distribution of Shark Attack Types",
   "width": "container",
-  "height": 300,
+  "height": 200,
   "data": {
     "url": "https://raw.githubusercontent.com/Xuanny-qx/Visualisation2/main/data/shark_attack.csv"
   },
