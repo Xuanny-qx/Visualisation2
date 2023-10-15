@@ -23,7 +23,7 @@
     "color": {
       "field": "Fatal (Y/N)",
       "type": "nominal",
-      "scale": { "range": ["red", "blue"] }, // Set red and blue colors
+      "scale": { "range": ["red", "blue"] }, 
       "legend": { "title": "Fatal (Y/N)" },
       "sort": ["Y", "N"]
     },
