@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 600,
   "height": 400,
-  "title": "Top  Shark Attack Activities by Fatality",
+  "title": "Top 10 Shark Attack Activities by Fatality",
   "data": {
     "url": "https://raw.githubusercontent.com/Xuanny-qx/Visualisation2/main/data/shark_attack.csv",
     "format": {"type": "csv"}
